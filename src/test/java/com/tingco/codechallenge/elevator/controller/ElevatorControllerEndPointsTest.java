@@ -46,12 +46,6 @@ public class ElevatorControllerEndPointsTest {
     }
 
     @Test
-    public void requestElevatorMaxFloor() {
-        Assert.assertEquals(maxFloor, endPoints.requestElevator(maxFloor).getBody().getAddressedFloor());
-        Assert.assertEquals(HttpStatus.OK, endPoints.requestElevator(maxFloor).getStatusCode());
-    }
-
-    @Test
     public void requestElevatorWithIncorrectLowFloor() {
         Assert.assertEquals(HttpStatus.BAD_REQUEST, endPoints.requestElevator(minFloor - 1).getStatusCode());
     }
@@ -68,7 +62,7 @@ public class ElevatorControllerEndPointsTest {
 
     @Test
     public void releaseElevator() {
-        Assert.assertEquals(ResponseEntity.ok(Boolean.TRUE), endPoints.releaseElevator(minFloor));
+        Assert.assertEquals(ResponseEntity.ok(Boolean.TRUE), endPoints.releaseElevator(0));
     }
 
     @Test

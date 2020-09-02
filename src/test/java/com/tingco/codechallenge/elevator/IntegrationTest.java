@@ -79,11 +79,10 @@ public class IntegrationTest {
     }
 
     private void awaitMovingUpFloors(final int floors, final Elevator elevator) {
-        await().atMost((elevatorSpeed * floors) + pollSpeed, SECONDS).until(() -> {
-            return elevator.currentFloor() == floors
-                    && elevator.isBusy()
-                    && elevator.getDirection().equals(UP);
-        });
+        await().atMost((elevatorSpeed * floors) + pollSpeed, SECONDS).until(() ->
+                elevator.currentFloor() == floors
+                        && elevator.isBusy()
+                        && elevator.getDirection().equals(UP));
     }
 
     private void awaitReachFloor(final int floors, final int targetFloor, final Elevator elevator) {

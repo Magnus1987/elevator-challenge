@@ -10,7 +10,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 
 import static com.tingco.codechallenge.elevator.api.Elevator.Direction.*;
 import static com.tingco.codechallenge.elevator.impl.ElevatorEvent.EventType.*;
