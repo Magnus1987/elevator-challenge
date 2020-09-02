@@ -10,8 +10,8 @@ import static org.junit.Assert.assertFalse;
 
 public class ElevatorImplTest {
 
-    private final static int MIN_FLOOR = 0;
-    private final static int MAX_FLOOR = 5;
+    private static final int MIN_FLOOR = 0;
+    private static final int MAX_FLOOR = 5;
 
     private ElevatorImpl elevator = new ElevatorImpl(1, MIN_FLOOR, MAX_FLOOR, Mockito.mock(EventBus.class));
 
