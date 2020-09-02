@@ -6,7 +6,7 @@ package com.tingco.codechallenge.elevator.api;
  * @author Sven Wesley
  *
  */
-interface Elevator {
+public interface Elevator {
 
     /**
      * Enumeration for describing elevator's direction.
@@ -58,4 +58,13 @@ interface Elevator {
      */
     int currentFloor();
 
+    /**
+     * Release elevator.
+     */
+    void reset();
+
+    /**
+     * Move elevator based on queue
+     */
+    void operate();
 }
