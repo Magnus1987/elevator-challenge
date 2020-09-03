@@ -1,7 +1,7 @@
 package com.tingco.codechallenge.elevator.service;
 
 import com.google.common.eventbus.EventBus;
-import com.tingco.codechallenge.elevator.model.ElevatorEventBuilder;
+import com.tingco.codechallenge.elevator.model.ElevatorEvent;
 import com.tingco.codechallenge.elevator.service.impl.ElevatorImpl;
 import com.tingco.codechallenge.elevator.service.impl.ElevatorControllerImpl;
 import org.junit.Test;
@@ -47,8 +47,8 @@ public class ElevatorControllerImplTest {
         assertFalse(elevatorController.getPendingRequests().isEmpty());
 
         verify(eventBus, times(1))
-                .post(new ElevatorEventBuilder()
-                        .setEventType(PENDING_REQUEST)
+                .post(ElevatorEvent.builder()
+                        .eventType(PENDING_REQUEST)
                         .build());
     }
 
@@ -67,9 +67,9 @@ public class ElevatorControllerImplTest {
         assertEquals(UP, elevator2.getDirection());
         assertEquals(7, elevator2.getAddressedFloor());
 
-        verify(eventBus, times(1)).post(new ElevatorEventBuilder()
-                .setEventType(ASSIGNED)
-                .setId(1)
+        verify(eventBus, times(1)).post(ElevatorEvent.builder()
+                .eventType(ASSIGNED)
+                .id(1)
                 .build());
     }
 
@@ -88,13 +88,13 @@ public class ElevatorControllerImplTest {
         assertEquals(6, elevator.getAddressedFloor());
         assertEquals(4, elevator2.getAddressedFloor());
 
-        verify(eventBus, times(1)).post(new ElevatorEventBuilder()
-                .setEventType(ASSIGNED)
-                .setId(0)
+        verify(eventBus, times(1)).post(ElevatorEvent.builder()
+                .eventType(ASSIGNED)
+                .id(0)
                 .build());
-        verify(eventBus, times(1)).post(new ElevatorEventBuilder()
-                .setEventType(ASSIGNED)
-                .setId(1)
+        verify(eventBus, times(1)).post(ElevatorEvent.builder()
+                .eventType(ASSIGNED)
+                .id(1)
                 .build());
     }
 
@@ -111,9 +111,9 @@ public class ElevatorControllerImplTest {
         assertEquals(NONE, elevator.getDirection());
         assertEquals(3, elevator.currentFloor());
 
-        verify(eventBus, times(1)).post(new ElevatorEventBuilder()
-                .setEventType(ASSIGNED)
-                .setId(0)
+        verify(eventBus, times(1)).post(ElevatorEvent.builder()
+                .eventType(ASSIGNED)
+                .id(0)
                 .build());
     }
 
@@ -128,9 +128,9 @@ public class ElevatorControllerImplTest {
         assertEquals(NONE, elevator.getDirection());
         assertEquals(1, elevator.currentFloor());
 
-        verify(eventBus, times(1)).post(new ElevatorEventBuilder()
-                .setEventType(RESETED)
-                .setId(0)
+        verify(eventBus, times(1)).post(ElevatorEvent.builder()
+                .eventType(RESETED)
+                .id(0)
                 .build());
     }
 

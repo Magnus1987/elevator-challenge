@@ -1,9 +1,9 @@
 package com.tingco.codechallenge.elevator.service.impl;
 
 import com.google.common.eventbus.EventBus;
+import com.tingco.codechallenge.elevator.model.ElevatorEvent;
 import com.tingco.codechallenge.elevator.service.Elevator;
 import com.tingco.codechallenge.elevator.service.ElevatorController;
-import com.tingco.codechallenge.elevator.model.ElevatorEventBuilder;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -88,14 +88,14 @@ public class ElevatorControllerImpl implements ElevatorController {
         if (availableElevator.isPresent()) {
             Elevator elevator = availableElevator.get();
             elevator.moveElevator(toFloor);
-            eventBus.post(new ElevatorEventBuilder()
-                    .setEventType(ASSIGNED)
-                    .setId(elevator.getId())
+            eventBus.post(ElevatorEvent.builder()
+                    .eventType(ASSIGNED)
+                    .id(elevator.getId())
                     .build());
             return elevator;
         } else {
-            eventBus.post(new ElevatorEventBuilder()
-                    .setEventType(PENDING_REQUEST)
+            eventBus.post(ElevatorEvent.builder()
+                    .eventType(PENDING_REQUEST)
                     .build());
             pendingRequests.add(toFloor);
             return null;
@@ -111,9 +111,9 @@ public class ElevatorControllerImpl implements ElevatorController {
     public synchronized void releaseElevator(final Elevator elevator) {
         if (elevators.contains(elevator)) {
             elevator.reset();
-            eventBus.post(new ElevatorEventBuilder()
-                    .setEventType(RESETED)
-                    .setId(elevator.getId())
+            eventBus.post(ElevatorEvent.builder()
+                    .eventType(RESETED)
+                    .id(elevator.getId())
                     .build());
         }
     }

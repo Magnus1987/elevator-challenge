@@ -1,12 +1,14 @@
 package com.tingco.codechallenge.elevator.model;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class ElevatorEvent {
 
-    private int id;
-    private EventType eventType;
+    private final int id;
+    private final EventType eventType;
 
     public enum EventType {
         ASSIGNED,

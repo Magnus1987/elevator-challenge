@@ -1,8 +1,8 @@
 package com.tingco.codechallenge.elevator.service.impl;
 
 import com.google.common.eventbus.EventBus;
+import com.tingco.codechallenge.elevator.model.ElevatorEvent;
 import com.tingco.codechallenge.elevator.service.Elevator;
-import com.tingco.codechallenge.elevator.model.ElevatorEventBuilder;
 import lombok.ToString;
 
 import static com.tingco.codechallenge.elevator.service.Elevator.Direction.*;
@@ -80,9 +80,9 @@ public class ElevatorImpl implements Elevator, Runnable {
     @Override
     public void reset() {
         setDirection(NONE);
-        eventBus.post(new ElevatorEventBuilder()
-                .setEventType(BECAME_IDLE)
-                .setId(getId())
+        eventBus.post(ElevatorEvent.builder()
+                .eventType(BECAME_IDLE)
+                .id(getId())
                 .build());
         addressedFloor = currentFloor;
     }
@@ -98,24 +98,24 @@ public class ElevatorImpl implements Elevator, Runnable {
     private void moveElevator() {
         if (direction.equals(UP)) {
             currentFloor++;
-            eventBus.post(new ElevatorEventBuilder()
-                    .setEventType(MOVING_UP)
-                    .setId(getId())
+            eventBus.post(ElevatorEvent.builder()
+                    .eventType(MOVING_UP)
+                    .id(getId())
                     .build());
         } else if (direction.equals(DOWN)) {
             currentFloor--;
-            eventBus.post(new ElevatorEventBuilder()
-                    .setEventType(MOVING_DOWN)
-                    .setId(getId())
+            eventBus.post(ElevatorEvent.builder()
+                    .eventType(MOVING_DOWN)
+                    .id(getId())
                     .build());
         }
     }
 
     private void stopElevator() {
         setDirection(NONE);
-        eventBus.post(new ElevatorEventBuilder()
-                .setEventType(BECAME_IDLE)
-                .setId(getId())
+        eventBus.post(ElevatorEvent.builder()
+                .eventType(BECAME_IDLE)
+                .id(getId())
                 .build());
     }
 
