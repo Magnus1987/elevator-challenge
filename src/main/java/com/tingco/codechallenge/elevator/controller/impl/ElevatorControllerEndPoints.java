@@ -1,7 +1,8 @@
-package com.tingco.codechallenge.elevator.controller;
+package com.tingco.codechallenge.elevator.controller.impl;
 
-import com.tingco.codechallenge.elevator.api.Elevator;
-import com.tingco.codechallenge.elevator.api.ElevatorController;
+import com.tingco.codechallenge.elevator.service.Elevator;
+import com.tingco.codechallenge.elevator.controller.ElevatorEndPoints;
+import com.tingco.codechallenge.elevator.service.ElevatorController;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;

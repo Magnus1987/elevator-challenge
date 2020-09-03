@@ -1,7 +1,6 @@
 package com.tingco.codechallenge.elevator;
 
-import com.tingco.codechallenge.elevator.api.Elevator;
-import com.tingco.codechallenge.elevator.config.ElevatorApplication;
+import com.tingco.codechallenge.elevator.service.Elevator;
 import com.tingco.codechallenge.elevator.controller.ElevatorEndPoints;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +11,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static com.jayway.awaitility.Awaitility.await;
-import static com.tingco.codechallenge.elevator.api.Elevator.Direction.*;
+import static com.tingco.codechallenge.elevator.service.Elevator.Direction.NONE;
+import static com.tingco.codechallenge.elevator.service.Elevator.Direction.UP;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 /**

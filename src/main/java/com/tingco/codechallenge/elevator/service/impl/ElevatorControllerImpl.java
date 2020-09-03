@@ -1,8 +1,9 @@
-package com.tingco.codechallenge.elevator.impl;
+package com.tingco.codechallenge.elevator.service.impl;
 
 import com.google.common.eventbus.EventBus;
-import com.tingco.codechallenge.elevator.api.Elevator;
-import com.tingco.codechallenge.elevator.api.ElevatorController;
+import com.tingco.codechallenge.elevator.service.Elevator;
+import com.tingco.codechallenge.elevator.service.ElevatorController;
+import com.tingco.codechallenge.elevator.model.ElevatorEventBuilder;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,7 +16,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import static com.tingco.codechallenge.elevator.impl.ElevatorEvent.EventType.*;
+import static com.tingco.codechallenge.elevator.model.ElevatorEvent.EventType.*;
 
 @NoArgsConstructor
 @Service

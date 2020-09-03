@@ -1,6 +1,7 @@
 package com.tingco.codechallenge.elevator.controller;
 
-import com.tingco.codechallenge.elevator.config.ElevatorApplication;
+import com.tingco.codechallenge.elevator.ElevatorApplication;
+import com.tingco.codechallenge.elevator.controller.impl.ElevatorControllerEndPoints;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

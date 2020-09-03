@@ -1,4 +1,4 @@
-package com.tingco.codechallenge.elevator.config;
+package com.tingco.codechallenge.elevator.configuration;
 
 import com.google.common.eventbus.AsyncEventBus;
 import com.google.common.eventbus.EventBus;

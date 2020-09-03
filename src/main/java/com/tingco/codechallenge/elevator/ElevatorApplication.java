@@ -1,15 +1,13 @@
-package com.tingco.codechallenge.elevator.config;
+package com.tingco.codechallenge.elevator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Preconfigured Spring Application boot class.
  *
  */
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.tingco.codechallenge.elevator"})
 public class ElevatorApplication {
 
     /**

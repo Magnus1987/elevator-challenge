@@ -1,7 +1,9 @@
-package com.tingco.codechallenge.elevator.impl;
+package com.tingco.codechallenge.elevator.service;
 
 import com.google.common.eventbus.EventBus;
-import com.tingco.codechallenge.elevator.api.Elevator;
+import com.tingco.codechallenge.elevator.model.ElevatorEventBuilder;
+import com.tingco.codechallenge.elevator.service.impl.ElevatorImpl;
+import com.tingco.codechallenge.elevator.service.impl.ElevatorControllerImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -11,8 +13,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 import java.util.Arrays;
 import java.util.Collections;
 
-import static com.tingco.codechallenge.elevator.api.Elevator.Direction.*;
-import static com.tingco.codechallenge.elevator.impl.ElevatorEvent.EventType.*;
+import static com.tingco.codechallenge.elevator.service.Elevator.Direction.*;
+import static com.tingco.codechallenge.elevator.model.ElevatorEvent.EventType.*;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;

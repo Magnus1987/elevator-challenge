@@ -1,11 +1,14 @@
-package com.tingco.codechallenge.elevator.impl;
+package com.tingco.codechallenge.elevator.service.impl;
 
 import com.google.common.eventbus.EventBus;
-import com.tingco.codechallenge.elevator.api.Elevator;
+import com.tingco.codechallenge.elevator.service.Elevator;
+import com.tingco.codechallenge.elevator.model.ElevatorEventBuilder;
+import lombok.ToString;
 
-import static com.tingco.codechallenge.elevator.api.Elevator.Direction.*;
-import static com.tingco.codechallenge.elevator.impl.ElevatorEvent.EventType.*;
+import static com.tingco.codechallenge.elevator.service.Elevator.Direction.*;
+import static com.tingco.codechallenge.elevator.model.ElevatorEvent.EventType.*;
 
+@ToString
 public class ElevatorImpl implements Elevator, Runnable {
 
     private int id;
@@ -118,17 +121,5 @@ public class ElevatorImpl implements Elevator, Runnable {
 
     public void setDirection(final Elevator.Direction direction) {
         this.direction = direction;
-    }
-
-    @Override
-    public String toString() {
-        return "BasicElevatorImpl{" +
-                "direction=" + direction +
-                ", id=" + id +
-                ", currentFloor=" + currentFloor +
-                ", minFloor=" + minFloor +
-                ", maxFloor=" + maxFloor +
-                ", addressedFloor=" + addressedFloor +
-                '}';
     }
 }

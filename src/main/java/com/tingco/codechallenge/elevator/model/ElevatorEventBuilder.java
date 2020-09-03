@@ -1,4 +1,4 @@
-package com.tingco.codechallenge.elevator.impl;
+package com.tingco.codechallenge.elevator.model;
 
 /**
  * Builds an {@link ElevatorEvent} following the builder pattern.

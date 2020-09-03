@@ -1,10 +1,11 @@
-package com.tingco.codechallenge.elevator.impl;
+package com.tingco.codechallenge.elevator.service;
 
 import com.google.common.eventbus.EventBus;
+import com.tingco.codechallenge.elevator.service.impl.ElevatorImpl;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import static com.tingco.codechallenge.elevator.api.Elevator.Direction.*;
+import static com.tingco.codechallenge.elevator.service.Elevator.Direction.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 

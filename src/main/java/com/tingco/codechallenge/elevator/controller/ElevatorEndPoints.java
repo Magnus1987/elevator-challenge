@@ -1,6 +1,6 @@
 package com.tingco.codechallenge.elevator.controller;
 
-import com.tingco.codechallenge.elevator.api.Elevator;
+import com.tingco.codechallenge.elevator.service.Elevator;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
